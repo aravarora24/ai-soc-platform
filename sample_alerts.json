@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ALERT-2026-0801",
+    "alert_name": "LockBit 3.0 Ransomware Encryptor & Shadow Copy Deletion",
+    "severity": "CRITICAL",
+    "source": "CrowdStrike EDR / Windows Security Log",
+    "timestamp": "2026-08-10T11:15:00Z",
+    "host": "WORKSTATION-SEC-09",
+    "ip_address": "185.220.101.5",
+    "user": "admin_corp",
+    "process": "vssadmin.exe delete shadows /all /quiet",
+    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "description": "Suspicious process vssadmin.exe attempted silent deletion of Volume Shadow Copies on WORKSTATION-SEC-09 followed by outbound connection to 185.220.101.5 over port 443."
+  },
+  {
+    "id": "ALERT-2026-0802",
+    "alert_name": "High-Volume Data Exfiltration to Suspicious Cloud Endpoint",
+    "severity": "HIGH",
+    "source": "Palo Alto Networks Perimeter Firewall",
+    "timestamp": "2026-08-10T10:45:00Z",
+    "host": "DB-SERVER-PROD-02",
+    "ip_address": "45.146.164.110",
+    "user": "service_backup",
+    "process": "rclone.exe",
+    "hash": "44d88612fea8a8f36de82e1278abb02f",
+    "description": "Unusual outbound data transfer exceeding 500 MB detected from production database server to unverified IP address 45.146.164.110 (RO)."
+  },
+  {
+    "id": "ALERT-2026-0803",
+    "alert_name": "Cobalt Strike Reflective DLL Beaconing Detected",
+    "severity": "HIGH",
+    "source": "Splunk SIEM Collector",
+    "timestamp": "2026-08-10T09:30:00Z",
+    "host": "FINANCE-PC-04",
+    "ip_address": "198.51.100.42",
+    "user": "analyst_finance",
+    "process": "rundll32.exe",
+    "hash": "44d88612fea8a8f36de82e1278abb02f",
+    "description": "Periodic HTTPS traffic heartbeats at exact 15-second intervals directed to external domain c2-command-hub.xyz matching Cobalt Strike C2 profile."
+  },
+  {
+    "id": "ALERT-2026-0804",
+    "alert_name": "Active Directory LSASS Memory Credential Dumping",
+    "severity": "CRITICAL",
+    "source": "Microsoft Defender for Endpoint",
+    "timestamp": "2026-08-10T08:12:00Z",
+    "host": "DC-PRIMARY-01",
+    "ip_address": "192.168.1.105",
+    "user": "domain_admin",
+    "process": "powershell.exe -EncodedCommand QwBvAG0AbQBhAG4AZAA=",
+    "hash": "29b4e548ad7208d1326fb511b8b80983",
+    "description": "LSASS process memory access request initiated by non-standard powershell session from domain controller DC-PRIMARY-01."
+  }
+]
